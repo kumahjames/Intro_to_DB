@@ -1,9 +1,9 @@
-import pymysql
+import mysql.connector
 
 def create_database():
     try:
         # Connect to MySQL server without specifying database
-        connection = pymysql.connect(
+        connection = mysql.connector.connect(
             host='localhost',
             user='root',
             password='Kumahjames12#'
@@ -15,7 +15,7 @@ def create_database():
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
         
-    except pymysql.Error as e:
+    except mysql.connector.Error as e:
         print(f"Error: {e}")
     finally:
         # Close connection
